@@ -15,7 +15,7 @@ Dodatkowo publikuję aplikację mobilną **[Simple CGM 2009 Edycja Szkolna](http
 
 Brzmi to może trochę skomplikowanie, ale nie wiem jak opisać to rozwiązanie w prosty sposób, dlatego na poniższym schemacie staram się zilustrować poszczególne elementy systemu.
 
-W naszym przypadku, dziecko może skanować się zarówno za pomocą zegarka [Sony SmartWatch 3 SWR50](http://www.sonymobile.com/pl/products/smart-products/smartwatch-3-swr50/#yellow), jak i za pomocą smartfonu [Sony Xperia E5](http://www.sonymobile.com/pl/products/phones/xperia-e5/). Podczas pobytu w szkole, smartfon schowany jest do teczki, a dziecko skanuje się tylko zegarkiem. Dodatkowo nauczyciel widzi pomiar glikemii na swoim smartfonie za pomocą aplikaji *[Simple CGM 2009 Edycja Szkolna](https://github.com/woznica1970/simple-cgm-school)*. Aplikacja *[Glimp](http://nightscout.pl/freestyle-libre/glimp/)* przesyła pomiar glikemii z zegarka, za pomocą smartfonu komórkowego do aplikacji *[Nightscout](http://nightscout.pl/instalacja/)*, zainstalowanej w serwisie *[Azure](https://azure.microsoft.com/pl-pl/)*. Sama aplikacji *[Nightscout](http://nightscout.pl/instalacja/)* przechowuje  pomiary glikemii w bazie *[mLab](Https://mlab.com/welcome/)*. Równolegle aplikacja *[Glimp](http://nightscout.pl/freestyle-libre/glimp/)* przesyła pomiar glikemii do pliku przechowywanego w serwisie *[Dropbox](https://www.dropbox.com/)*.
+W naszym przypadku, dziecko może skanować się zarówno za pomocą zegarka [Sony SmartWatch 3 SWR50](http://www.sonymobile.com/pl/products/smart-products/smartwatch-3-swr50/#yellow), jak i za pomocą smartfonu [Sony Xperia E5](http://www.sonymobile.com/pl/products/phones/xperia-e5/). Podczas pobytu w szkole, smartfon schowany jest do teczki, a dziecko skanuje się tylko zegarkiem. Dodatkowo nauczyciel widzi pomiar glikemii na swoim smartfonie za pomocą aplikacji *[Simple CGM 2009 Edycja Szkolna](https://github.com/woznica1970/simple-cgm-school)*. Aplikacja *[Glimp](http://nightscout.pl/freestyle-libre/glimp/)* przesyła pomiar glikemii z zegarka, za pomocą smartfonu do aplikacji *[Nightscout](http://nightscout.pl/instalacja/)*, zainstalowanej w serwisie *[Azure](https://azure.microsoft.com/pl-pl/)*. Sama aplikacji *[Nightscout](http://nightscout.pl/instalacja/)* przechowuje  pomiary glikemii w bazie *[mLab](Https://mlab.com/welcome/)*. Równolegle aplikacja *[Glimp](http://nightscout.pl/freestyle-libre/glimp/)* przesyła pomiar glikemii do pliku przechowywanego w serwisie *[Dropbox](https://www.dropbox.com/)*.
 
 **Simple CGM 2009** jest zainstalowana w serwisie *[Azure](https://azure.microsoft.com/pl-pl/)*, obok aplikacji *[Nightscout](http://nightscout.pl/instalacja/)* i pobiera pomiary glikemii **jednocześnie** z bazy *[mLab](Https://mlab.com/welcome/)* oraz z pliku zapisanego w serwisie *[Dropbox](https://www.dropbox.com/)*.
 
@@ -30,7 +30,7 @@ Zachęcam użytkowników smartfonów **iPhone** do utworzenia skrótu do **Simpl
 
 
 **Simple CGM 2009** wymaga do poprawnego działania, abyś wcześniej posiadał poprawnie zainstalowane i skonfigurowane aplikacje *[Glimp](http://nightscout.pl/freestyle-libre/glimp/)*, *[Nightscout](http://nightscout.pl/instalacja/)* oraz konto w serwisie *[Dropbox](https://www.dropbox.com/)*.
-Pamiętaj również, aby w aplikacji *[Glimp](http://nightscout.pl/freestyle-libre/glimp/)* zdefiniować w menu **_Options\Remote glucose monitoring_** dwa konto *[Dropbox](https://www.dropbox.com/)* i *[Nightscout](http://nightscout.pl/instalacja/)*.
+Pamiętaj również, aby w aplikacji *[Glimp](http://nightscout.pl/freestyle-libre/glimp/)* zdefiniować w menu **_Options\Remote glucose monitoring_** dwa konta *[Dropbox](https://www.dropbox.com/)* i *[Nightscout](http://nightscout.pl/instalacja/)*.
 
 
 **Simple CGM 2009** uruchamiasz wpisując do przeglądarki internetowej **adres url**, zdefinowany przez Ciebie dla aplikacji podczas procesu instalacji w serwisie *[Azure](https://azure.microsoft.com/pl-pl/free/)*.
@@ -38,7 +38,7 @@ Pamiętaj również, aby w aplikacji *[Glimp](http://nightscout.pl/freestyle-lib
 
 **Simple CGM 2009** nie jest aplikacją oficjalnie zatwierdzoną przez firmę [Abbott](http://xidoneo.pl/) i nie daje żadnej gwarancji co do poprawności odczytu wartości glikemii z z sensora *[FreeStyle Libre](http://www.freestylelibre.pl/)* oraz nie jest przeznaczona jako substytut lekarza diabetologa. W przypadku jakichkolwiek pytań lub wątpliwości musisz skontaktować się ze swoim lekarzem specjalistą.
 
-Instalując i uruchamiająć aplikację **Simple CGM 2009** wyrażasz zgodę na jej używanie wyłącznie na własne ryzyko oraz akceptujesz warunki <a href="LICENSE.md">Licencji</a>.
+Instalując i uruchamiając aplikację **Simple CGM 2009** wyrażasz zgodę na jej używanie wyłącznie na własne ryzyko oraz akceptujesz warunki <a href="LICENSE.md">Licencji</a>.
 
 
 W razie problemów z działaniem aplikacji lub pytań, proszę o wysłanie mi wiadomości email na adres <a href="mailto:simple.cgm.2009@gmail.com" title="simple.cgm.2009@gmail.com">simple.cgm.2009@gmail.com</a>.
@@ -79,7 +79,7 @@ Nad przyciskiem **_Odśwież_** widać w czerwonym polu ilość pomiarów glikem
 
 **_Widok poziomy_** pokazuje wykres powiększony do szerokości ekranu i jest dostępny, jeżeli urządzenie, na którym uruchomiona jest aplikacja ma włączony tryb autorotacji ekranu.
 
-**Simple CGM 2009** udostępnia również 4 widoki dzienne , oraz 4 widoki nocne, które można wybrać są w menu **_Ustawienia_** jako opcje **A/B/C/D** (barwy jasne) oraz **E/F/G/H** (barwy ciemne).
+**Simple CGM 2009** udostępnia również 4 widoki dzienne , oraz 4 widoki nocne, które można wybrać w menu **_Ustawienia_** jako opcje **A/B/C/D** (barwy jasne) oraz **E/F/G/H** (barwy ciemne).
 
 # Instalacja - Wstęp
 
@@ -197,15 +197,15 @@ Dropbox.File.Path : /aplikacje/Glimp/GlicemiaNightscout.csv
 #### 4. Konfiguracja *Opcji wdrożenia* ####
 
 1. Postępuj zgodnie z [instrukcją](http://nightscout.pl/instalacja/azure-konfiguracja/), punkt od 30 do 40.
-2. Pamiętaj, aby z podać swoje dane logowania do konta **_GitHub_** oraz wybrać odpowiedni *Projekt*: **simple-cgm** oraz *Rozgałęzienie*: **Master**
+2. Pamiętaj, aby podać swoje dane logowania do konta **_GitHub_** oraz wybrać odpowiedni *Projekt*: **simple-cgm** oraz *Rozgałęzienie*: **Master**
 
 ### Uruchomienie *Simple CGM 2009* na smartfonie ###
 
 1. Wpisz **adres url** np. **_https://mojanazwaaplikacji.azurewebsites.net_**  w dowolnej przeglądarce internetowej zainstalowanej na Twoim urządzeniu.
 2. Adres url znajdziesz na swoim koncie w usłudze *[Azure](https://portal.azure.com/)*.
-3. Jeżeli aplikacja **Simple CGM 2009** została prawidłowo zainstalowana w usłudze *[Azure](https://portal.azure.com/)* to teraz powinna zostać wyświetlona startowa startowa.
+3. Jeżeli aplikacja **Simple CGM 2009** została prawidłowo zainstalowana w usłudze *[Azure](https://portal.azure.com/)* to teraz powinna zostać wyświetlona strona startowa.
 4. Kliknij u dołu ekranu na menu **_Ustawienia_**.
-4. Wpisz w polu **_Secret Key_** to samo hasło, które ustawiłeś w wartości klucza *Secret Key* w sekcji *Ustawienia aplikacji* podczas instalacji i konfiguracji **Simple CGM 2009** w usłudze *[Azure](https://portal.azure.com/)*  .
+4. Wpisz w polu **_Secret Key_** to samo hasło, które ustawiłeś w wartości klucza *Secret.Key* w sekcji *Ustawienia aplikacji* podczas instalacji i konfiguracji **Simple CGM 2009** w usłudze *[Azure](https://portal.azure.com/)*  .
 5. Następnie kliknij po kolei przyciski **_Zapisz_**, **_24 H_**, **_Monitor_**.
 
 ![ustawienia1](Images/Demo/ustawienia1.jpg)
@@ -213,7 +213,7 @@ Dropbox.File.Path : /aplikacje/Glimp/GlicemiaNightscout.csv
 
 Jeżeli proces instalacji przebiegł prawidłowo, to powinieneś teraz zobaczyć na ekranie wartość glikemii z ostatniego skanowania oraz wykres liniowy. Jeżeli coś poszło nie tak, aplikacja wyświetli odpowiedni komunikat błędu.
 
-W ramce poniżej znajdują się możliwe komunikaty błędów. W przypadku ich wystąpienia należy sprawdzić klucze i ich wartość w sekcji **Parametry połączeń** oraz sekcji **Ustawienia aplikacji** usługi *[Azure](https://portal.azure.com/)*:
+W ramce poniżej znajdują się możliwe komunikaty błędów. W przypadku ich wystąpienia należy sprawdzić klucze i ich wartości w sekcji **Parametry połączeń** oraz w sekcji **Ustawienia aplikacji** usługi *[Azure](https://portal.azure.com/)*:
 
 ```
 (MongoDB) Brak parametru połączenia -> brak jednego z kluczy Mongo.*, lub błąd w nazwie klucza
@@ -224,7 +224,7 @@ W ramce poniżej znajdują się możliwe komunikaty błędów. W przypadku ich w
 (MongoDB) Niepoprawny format danych -> problem z bazą mLab. Napisz do mnie wiadomość email
 (MongoDB) Niepoprawny secret key -> porównaj wartość klucza Secret.Key z hasłem użytym na smartfonie
 
-(Dropbox) Brak parametru połączenia -> brak jednego z kluczy Dropox.*, lub błąd w nazwie klucza
+(Dropbox) Brak parametru połączenia -> brak jednego z kluczy Dropbox.*, lub błąd w nazwie klucza
 (Dropbox) Unieważniony access token -> błędna wartość klucza Dropbox.Access.Token
 (Dropbox) Nie znaleziono pliku danych -> zobacz punktu 'Przejdź do strony Dropbox API Explorer download'
 (Dropbox) Błędne żądanie -> napisz do mnie wiadomość email 
