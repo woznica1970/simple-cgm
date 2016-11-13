@@ -5,11 +5,11 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <link rel="shortcut icon" type="image/x-icon" href="Images/favicon.ico" />
     <link href="styles/kendo.common.min.css" rel="stylesheet" type="text/css" />
-    <script src="js/open.cgm.min.js?ver=161109.1335"></script>
+    <script src="js/open.cgm.min.js?ver=161111.1600"></script>
 </head>
 <body>
 
-    <div id="monitor-view" data-role="view" data-title="Monitor" data-layout="default-layout" data-init="monitor_init" data-show="monitor_show">
+    <div id="monitor-view" data-role="view" data-title="Monitor" data-layout="default-layout" data-init="monitor_init" data-show="monitor_show" data-before-hide="monitor_hide">
         <div data-role="content" style="font-weight: bold; text-align: center;">
             <div id="monitor-portrait" style="margin-bottom:.5em;">
                 <div style="padding: 1em 3em 0em 3em;">
@@ -126,12 +126,11 @@
             <li>
                 <ul>
                     <li>Pierwsze źródło danych:
-                        <ul id="settings-datasource" class="km-navbar">
-                            <li>Dropbox
-                            </li>
-                            <li>&nbsp;&nbsp;Azure&nbsp;&nbsp;
-                            </li>
-                        </ul>
+                            <ul id="settings-datasource" class="km-navbar">
+                                <li>Tandem</li>
+                                <li>Dropbox</li>
+                                <li>&nbsp;&nbsp;Azure&nbsp;&nbsp;</li>
+                            </ul>
                     </li>
                     <li>
                         <label>
@@ -191,11 +190,6 @@
                 </ul>
             </li>
         </ul>
-    </div>
-
-    <div id="about-view" data-role="view" data-title="About" data-layout="default-layout" data-init="about_init" data-show="about_show">
-        <div id="licence" data-role="content" style="text-align: unset;">
-        </div>
     </div>
 
     <div id="default-layout" data-role="layout" data-id="default-layout">

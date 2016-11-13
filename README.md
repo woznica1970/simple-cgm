@@ -3,47 +3,76 @@ Copyright (c) 2016 <a href="mailto:simple.cgm.2009@gmail.com" title="Mariusz Wo�
 
 ![logo](/Images/scanner-os.png)
 
-Aplikacja mobilna **Simple CGM 2009** powstała dzięki inicjatywie **[Teresy Woźnicy](http://www.facebook.com/teresa.woznica.58)**, grupa Facebook **[Cukrzyca typ 1 - odzyskajmy kolory zycia :)](https://www.facebook.com/groups/140046209720733/)**, która przekazała jasne i praktyczne oczekiwania funkcjonalne w stosunku do aplikacji.
+>**Dedykacja**
+ 
+>_**[Teresa Woźnica]**, grupa Facebook **[Cukrzyca typ 1 - odzyskajmy kolory zycia :)]**, za sformułowanie bardzo praktycznych oczekiwań funkcjonalnych w stosunku do  **Simple CGM 2009**, która powstała tylko dzięki Twojej inicjatywie i uporowi, przyjmij w tym miejscu gorące podziękowania za pomoc, inspirację oraz okazaną cierpliwość._
+>
+>_Twoje merytoryczne uwagi poparte zdrowym rozsądkiem, z perspektywy **Mamy** opiekującej się dzieckiem z CT1 w wieku szkolnym, pozwoliły zbudować napawdę proste i użyteczne narzędzie._
 
-Korzystając z okazji, pragnę w tym miejscu, jeszcze raz serdecznie podziękać **[Teresie](http://www.facebook.com/teresa.woznica.58)** za jej pomoc, inspirację i okazaną cierpliwość. Merytoryczne uwagi, z perspektywy **Mamy** opiekującej się dzieckiem z CT1 w wieku szkolnym, oparte na zdrowym rozsądku, pozwoliły zbudować proste i użyteczne narzędzie. Mam nadzieję, że dzięki temu, aplikacja **Simple CGM 2009**, okaże się równie pomocna dla wszystkich zainteresowanych.
 
-Dodatkowo publikuję aplikację mobilną **[Simple CGM 2009 Edycja Szkolna](https://github.com/woznica1970/simple-cgm-school)**, którą udostępniamy na życzenie nauczycielom w celu monitorowania glikemii u dziecka, z zachowaniem zasad ochrony prywatności tzn. aplikacja udostępnia tylko ostatni pomiar glikemii w określonych dniach i godzinach np. w czasie pobytu dziecka w szkole.
+# Wstęp
 
-# O aplikacji
+**_Simple CGM 2009_**, to **_responsywna aplikacja webowa_** służąca do wizualizacji pomiarów glikemii na ekranach różnych urządzeń z dostępem do Internetu np. smartfonach. Wartości glikemii  pochodzą z sensora *[FreeStyle Libre]*, a odczytywane są przez aplikację *[Glimp]*, lub aplikację *[Libre Alarm]* połączoną z aplikacją *[xDrip+]*. To ostatnie rozwiązanie jest testowane przez **[Timi Koza]**. Wartości pomiarów poziomu glikemii są zapisywane następnie przez wybraną aplikację w ekosystemie *[Nightscout]* oraz usłudze *[Dropbox]*.
 
-**Simple CGM 2009** powstała jako responsywna aplikacja mobilna i służy do wizualizacji pomiarów glikemii na podstawie wartości odczytywanych z sensora *[FreeStyle Libre](http://www.freestylelibre.pl/)* przez aplikację *[Glimp](http://nightscout.pl/freestyle-libre/glimp/)*, zapisywanych następnie w aplikacji *[Nightscout](http://nightscout.pl/instalacja/)* oraz usłudze *[Dropbox](https://www.dropbox.com/)*.
+>Fakt, że **_Simple CGM 2009_** może odczytwać pomiary glikemii z ekosystemu **_[Nightscout]_** sprawia, że będzie można również za pomocą tej aplikacji wizualizować dane pochodzące z innych urządzeń i programów współpracujących z ekosystemem *[Nightscout]*.
 
-Brzmi to może trochę skomplikowanie, ale nie wiem jak opisać to rozwiązanie w prosty sposób, dlatego na poniższym schemacie staram się zilustrować poszczególne elementy systemu.
+W naszym przypadku, dziecko może skanować się zarówno za pomocą zegarka [Sony SmartWatch 3 SWR50], jak i za pomocą smartfonu [Sony Xperia E5]. Podczas pobytu w szkole, smartfon schowany jest do teczki, a dziecko skanuje się tylko zegarkiem. Nauczyciel natomiast, widzi pomiar glikemii na swoim prywatnym smartfonie za pomocą aplikacji **_[Simple CGM 2009 Edycja Szkolna]_**. Aplikacja *[Glimp]*, zainstalowana jednocześnie na obu powyższych urządzeniach, przesyła pomiar glikemii z zegarka, za pomocą smartfonu do ekosystemu *[Nightscout]* działającego w serwisie *[Azure]*. Sam ekosystem *[Nightscout]* przechowuje natomiast pomiary glikemii w bazie danych działającej w usłudze *[mLab]*. Równolegle aplikacja *[Glimp]* przesyła pomiar glikemii do pliku w formacie *_CSV_* zapisywanego w serwisie *[Dropbox]*.
 
-W naszym przypadku, dziecko może skanować się zarówno za pomocą zegarka [Sony SmartWatch 3 SWR50](http://www.sonymobile.com/pl/products/smart-products/smartwatch-3-swr50/#yellow), jak i za pomocą smartfonu [Sony Xperia E5](http://www.sonymobile.com/pl/products/phones/xperia-e5/). Podczas pobytu w szkole, smartfon schowany jest do teczki, a dziecko skanuje się tylko zegarkiem. Dodatkowo nauczyciel widzi pomiar glikemii na swoim smartfonie za pomocą aplikacji *[Simple CGM 2009 Edycja Szkolna](https://github.com/woznica1970/simple-cgm-school)*. Aplikacja *[Glimp](http://nightscout.pl/freestyle-libre/glimp/)* przesyła pomiar glikemii z zegarka, za pomocą smartfonu do aplikacji *[Nightscout](http://nightscout.pl/instalacja/)*, zainstalowanej w serwisie *[Azure](https://azure.microsoft.com/pl-pl/)*. Sama aplikacji *[Nightscout](http://nightscout.pl/instalacja/)* przechowuje  pomiary glikemii w bazie *[mLab](Https://mlab.com/welcome/)*. Równolegle aplikacja *[Glimp](http://nightscout.pl/freestyle-libre/glimp/)* przesyła pomiar glikemii do pliku przechowywanego w serwisie *[Dropbox](https://www.dropbox.com/)*.
-
-**Simple CGM 2009** jest zainstalowana w serwisie *[Azure](https://azure.microsoft.com/pl-pl/)*, obok aplikacji *[Nightscout](http://nightscout.pl/instalacja/)* i pobiera pomiary glikemii **jednocześnie** z bazy *[mLab](Https://mlab.com/welcome/)* oraz z pliku zapisanego w serwisie *[Dropbox](https://www.dropbox.com/)*.
-
-Dzięki temu otrzymujemy większą gwarancję niezawodności działania systemu, ponieważ na wypadek awarii jednego ze źródeł danych, możemy w dalszym ciągu wyświetlić pomiar glikemii na naszym smartfonie.
+>**Uwaga**
+>
+>**_Simple CGM 2009_** nie jest dostępna w serwisie [Google Play] lub [iTunes Store], i nie wymaga tradycyjnej instalacji na urządzeniu mobilnym. Opis jak uruchomić aplikację na smartfonie znajdziesz poniżej w cześci *[Instalacja]*.
+>Na poniższym schemacie pragnę przedstawić relacje pomiędzy poszczególnymi elementami wchodzącymi w skład całego rozwiązania.
+>
+>**[Szymona Czapla]** i **[Timi Koza]**, serdecznie podziękowania dla Was za pomoc w opracowaniu poniższego schematu:
 
 ![schemat](/Images/Demo/schemat.jpg)
 
-**Simple CGM 2009** możesz uruchomić na dowolnym urządzeniu obsługującym przeglądarkę internetową z włączoną obsługą JavaScript, takim jak komputer, tablet, smartfon.
-Działanie **Simple CGM 2009** przetestowałem w popularnych przeglądarkach Chrome, Safari, Firefox, Opera, IE, oraz w systemach operacyjnych Android, iOS, Windows Phone. Aplikacja działa prawidłowo na wszytkich współczesnych smartfonach popularnych producentów. Wydajność aplikacji zależy oczywiście od specyfikacji technicznej konkretnego smartfona oraz jakości połączenia do Internetu.
+**Opis schematu**
 
-Zachęcam użytkowników smartfonów **iPhone** do utworzenia skrótu do **Simple CGM 2009** na pulpicie za pomocą funkcji menu *Dodaj do ekranu początkowego* z przeglądarki Safari . Pozwoli to na uruchamianie aplikacji w trybie pełnoekranowym. Proszę tylko pamiętać, że aplikacja uruchomiona w trybie pełnoekranowym wymaga ponownego wpisania **Secret Key**. Podobna funkcjonalność jest również dostępna dla użytkowników smartfonów z systemem Android.
+**_Simple CGM 2009_** instaluje się w serwisie *[Azure]* jako tzw. **_[Aplikacja Sieci Web]_**, równolegle do ekosystemu  *[Nightscout]*. Aplikację można również zainstalować na dowolnym innym serwerze web typu **_[IIS  Windows® Server]_**. Aplikacja może prezentować pomiary glikemii, korzystając z poniższych wariantów odczytu danych:
+ - czytając dane **jednocześnie** z bazy *[mLab]* w formacie [MongoDB] oraz z pliku w formacie *_CSV_* zapisywanego w serwisie *[Dropbox]*, tzw. opcja bezpieczna
+ - czytając dane **tylko** z bazy *[mLab]* w formacie [MongoDB], tzw. opcja uniwersalna
+ - czytając dane  **tylko** z pliku w formacie *_CSV_* zapisywanego w serwisie *[Dropbox]*, tzw. opcja szybka
 
+>Dzięki opcji odczytu danych od dwóch niezależnych dostawców jednocześnie, zyskujesz większą gwarancję niezawodności działania systemu, ponieważ na wypadek awarii jednego ze źródeł danych, możesz w dalszym ciągu odczytać na odległość pomiar glikemii na swoim smartfonie ze źródła rezerwowego.
 
-**Simple CGM 2009** wymaga do poprawnego działania, abyś wcześniej posiadał poprawnie zainstalowane i skonfigurowane aplikacje *[Glimp](http://nightscout.pl/freestyle-libre/glimp/)*, *[Nightscout](http://nightscout.pl/instalacja/)* oraz konto w serwisie *[Dropbox](https://www.dropbox.com/)*.
-Pamiętaj również, aby w aplikacji *[Glimp](http://nightscout.pl/freestyle-libre/glimp/)* zdefiniować w menu **_Options\Remote glucose monitoring_** dwa konta *[Dropbox](https://www.dropbox.com/)* i *[Nightscout](http://nightscout.pl/instalacja/)*.
+#Kompatybilność
 
+**_Simple CGM 2009_**, to **_responsywna aplikacja webowa_**, którą możesz uruchamiać na dowolnym urządzeniu obsługującym przeglądarkę internetową z włączoną obsługą *JavaScript*, takim jak **komputer, tablet, smartfon**.
+Działanie **_Simple CGM 2009_** przetestowałem w popularnych przeglądarkach **Chrome, Safari, Firefox, Opera, IE,** oraz w systemach operacyjnych **Android, iOS, Windows Phone**. Aplikacja działa prawidłowo na wszytkich współczesnych smartfonach popularnych producentów. Wydajność aplikacji zależy oczywiście od specyfikacji technicznej konkretnego smartfona oraz jakości połączenia do Internetu.
 
-**Simple CGM 2009** uruchamiasz wpisując do przeglądarki internetowej **adres url**, zdefinowany przez Ciebie dla aplikacji podczas procesu instalacji w serwisie *[Azure](https://azure.microsoft.com/pl-pl/free/)*.
+>Zachęcam użytkowników smartfonów **iPhone** do utworzenia skrótu do **_Simple CGM 2009_** na pulpicie za pomocą funkcji menu **_Dodaj do ekranu początkowego_** z przeglądarki Safari . Pozwoli to na uruchamianie aplikacji w **_trybie pełnoekranowym_**. Proszę tylko pamiętać, że aplikacja uruchomiona w trybie pełnoekranowym wymaga ponownego wpisania **Secret Key**. Podobna funkcjonalność jest również dostępna dla użytkowników smartfonów z systemem Android.
 
+**_Simple CGM 2009_** wymaga do uruchomienia i pracy, abyś wcześniej posiadał poprawnie zainstalowane i skonfigurowane, poniższe aplikacje i serwisy:
 
-**Simple CGM 2009** nie jest aplikacją oficjalnie zatwierdzoną przez firmę [Abbott](http://xidoneo.pl/) i nie daje żadnej gwarancji co do poprawności odczytu wartości glikemii z z sensora *[FreeStyle Libre](http://www.freestylelibre.pl/)* oraz nie jest przeznaczona jako substytut lekarza diabetologa. W przypadku jakichkolwiek pytań lub wątpliwości musisz skontaktować się ze swoim lekarzem specjalistą.
+- dla opcji bezpiecznej:
+ - aplikację *[Glimp]*
+ - ekosystem *[Nightscout]*
+ - konto w serwisie *[Dropbox]*
+- dla opcji uniwersalnej:
+ - aplikację *[Libre Alarm]* wraz z aplikacją *[xDrip+]* 
+ - ekosystem *[Nightscout]*
+- dla opcji szybkiej:
+ - aplikację *[Glimp]*
+ - konto w serwisie *[Dropbox]*
 
-Instalując i uruchamiając aplikację **Simple CGM 2009** wyrażasz zgodę na jej używanie wyłącznie na własne ryzyko oraz akceptujesz warunki <a href="LICENSE.md">Licencji</a>.
+>**Uwaga**
+>
+>Instalacja poszczególnych aplikacji i serwisów zależą tylko od Twoich specyficznych potrzeb i preferencji. Po instalacji i uruchomieniu **_Simple CGM 2009_** wystarczy bowiem wskazać, w jakiej opcji aplikacja ma pracować, oraz z których źródeł danych ma korzystać. Definiujesz te ustawienia za pomocą odpowiednich wartości kluczy **_Data.Source.Default_**, **_Data.Source.Switchable_** oraz **_Data.Model.Auto_** opisanych w dalszej części tego dokumentu.
 
+>Pamiętaj, aby w aplikacji *[Glimp]* zdefiniować w menu **_Options\Remote glucose monitoring_** dwa konta *[Dropbox]* oraz *[Nightscout]*, jeżeli chcesz, aby aplikacja pracowała w tzw. opcji bezpiecznej.
+> 
 
-W razie problemów z działaniem aplikacji lub pytań, proszę o wysłanie mi wiadomości email na adres <a href="mailto:simple.cgm.2009@gmail.com" title="simple.cgm.2009@gmail.com">simple.cgm.2009@gmail.com</a>.
+**_Simple CGM 2009_** uruchamiasz wpisując do przeglądarki internetowej **adres url**, zdefinowany przez Ciebie dla aplikacji podczas procesu instalacji w serwisie *[Azure]*. 
 
-Serdecznie dziękuję za wszystkie opinie i uwagi związane z działaniem i zakresem funkcjonalnym  **Simple CGM 2009**.
+**_Simple CGM 2009_** nie jest aplikacją oficjalnie zatwierdzoną przez firmę [Abbott] i nie daje żadnej gwarancji co do poprawności odczytu wartości glikemii z z sensora *[FreeStyle Libre]* oraz nie jest przeznaczona jako substytut lekarza diabetologa. W przypadku jakichkolwiek pytań lub wątpliwości musisz skontaktować się ze swoim lekarzem specjalistą.
+
+Instalując i uruchamiając aplikację **_Simple CGM 2009_** wyrażasz zgodę na jej używanie wyłącznie na własne ryzyko oraz akceptujesz warunki <a href="LICENSE.md">Licencji</a>.
+
+W razie problemów z działaniem aplikacji lub pytań, proszę o wysłanie mi wiadomości email na adres:
+><a href="mailto:simple.cgm.2009@gmail.com" title="simple.cgm.2009@gmail.com">simple.cgm.2009@gmail.com</a>.
+
+Serdecznie dziękuję za wszystkie sugestie oraz uwagi związane z działaniem i zakresem funkcjonalnym  **_Simple CGM 2009_**.
 
 
 # Wygląd i funkcjonalność
@@ -54,8 +83,10 @@ Serdecznie dziękuję za wszystkie opinie i uwagi związane z działaniem i zakr
 ![poziomo](Images/Demo/poziomo.jpg)
 
 
-Tak jak już wspominałem, **Simple CGM 2009** zawsze pobiera wartość ostatniego pomiaru glikemii **równocześnie z dwóch źródeł** tzn. serwisu *[Dropbox](https://www.dropbox.com/)* oraz serwisu *[Azure](https://azure.microsoft.com/pl-pl/free/)*, a następnie wyświetla ostatni pomiar glikemii ze źródła, które udostępnia w danej chwili bardzej bieżący wynik.
-Zaobserwowałem, że źródło *[Dropbox](https://www.dropbox.com/)* odświeża się szybciej, niż źródło *[Azure](https://azure.microsoft.com/pl-pl/free/)*. Czasami na wynik pomiaru glikemii ze źródła *[Azure](https://azure.microsoft.com/pl-pl/free/)* trzeba czekać kilka minut. Dlatego taka funkcjonalność jest bardzo pomocna, jeżeli zależy nam na szybkim odczytaniu wartości ostatniego pomiaru glikemii, bez względu na źródło.<p/>
+Tak jak już wspominałem, **_Simple CGM 2009_** może zawsze pobierać wartość ostatniego pomiaru glikemii **równocześnie z dwóch źródeł** tzn. serwisu *[Dropbox]* oraz serwisu *[Azure]* w tzw. opcji bezpiecznej, a następnie aplikacja wyświetla ostatni pomiar glikemii ze źródła, które udostępnia w danej chwili bardzej bieżący wynik.
+Zaobserwowałem, że źródło *[Dropbox]* odświeża się szybciej, niż źródło *[Azure]*. Czasami na wynik pomiaru glikemii ze źródła *[Azure]* trzeba czekać kilka minut. Dlatego taka funkcjonalność jest bardzo pomocna, jeżeli zależy nam na szybkim odczytaniu wartości ostatniego pomiaru glikemii, bez względu na źródło.
+
+>Możesz oczywiście ustawić własny preferowany wariant źródła danych.
 
 ####Widok *Monitor* pokazuje:####
 
@@ -79,23 +110,71 @@ Nad przyciskiem **_Odśwież_** widać w czerwonym polu ilość pomiarów glikem
 
 **_Widok poziomy_** pokazuje wykres powiększony do szerokości ekranu i jest dostępny, jeżeli urządzenie, na którym uruchomiona jest aplikacja ma włączony tryb autorotacji ekranu.
 
-**Simple CGM 2009** udostępnia również 4 widoki dzienne , oraz 4 widoki nocne, które można wybrać w menu **_Ustawienia_** jako opcje **A/B/C/D** (barwy jasne) oraz **E/F/G/H** (barwy ciemne).
+**_Simple CGM 2009_** udostępnia również 4 widoki dzienne , oraz 4 widoki nocne, które można wybrać w menu **_Ustawienia_** jako opcje **A/B/C/D** (barwy jasne) oraz **E/F/G/H** (barwy ciemne).
 
+![skins](Images/Demo/skins.jpg)
+![skins](Images/Demo/skinsL.jpg)
+
+**_Simple CGM 2009_** pozwala również wybrać w menu **_Ustawienia_**, z którego źródło danych ma korzystać do odczytywania pomiarów glikemii. Masz do wybou trzy warianty, o których już wspominałem:
+
+- **Tandem**, tzw. opcja bezpieczna, gdzie aplikacja czyta pomiary zarówno z usługi *[Dropbox]* oraz ekosystemu *[Azure]* z bazą *[mLab]*, dostępna tylko jeżeli używasz aplikacji [Glimp].
+- **Dropbox**, tzw. opcja szybka, dostępna tylko jeżel używasz aplikacji [Glimp] oraz usługi [Dropbox].
+- **Azure**, tzw. opcja uniwersalna, jeżeli używasz aplikacji [Glimp] lub [Libre Alarm] z [xDrip+] oraz ekosystemu *[Azure]* z bazą *[mLab]*.
+
+>Możesz ustawić w **_Ustawieniach aplikacji_** w kluczu **Data.Source.Default** jaki wariant źródła danych chcesz zastosować:
+- wartość klucza: **0** oznacza wariant **Tandem**
+- wartość klucza: **1** oznacza wariant **Dropbox**
+- wartość klucza: **2** oznacza wariant **Azure**
+
+>Dodatkowo możesz ustawić w kluczu **Data.Source.Switchable** czy zmiana wariantu źródła danych jest możliwa dynamicznie z poziomu aplikacji:
+- wartość klucza: **0** oznacza, że funkacja jest **Zablokowana**
+- wartość klucza: **1** oznacza, że funkcja jest **Aktywna**
+
+>Klucz **Data.Model.Auto** pozwala natomiast określić automatycznie z jakiej aplikacja pochodzą dane odczytywane ze źródła [Azure] / [mLab].
+Pomiary pochodzące z aplikacji [Glimp] zawierają dodatkowo tzw.wartość RAW glikemii, czyli wartość glikemii zarejestrowanej przez sensor i nieprzetworzonej przez algorytmy korygujące aplikacji czytającej sensor.
+
+W menu **_Ustawieniach_** widać również wartości kluczy zdefiniowane w sekcji *Ustawienia aplikacji* usługi **Azure** dla poszczególnych progów glikemii:
+
+- dolnej normy glikemii, odpowiada kluczowi **Norm.Min**
+- górnej normy glikemii, odpowiada kluczowi **Norm.Max**
+- hipoglikemii, odpowiada kluczowi **Alert.Hipo**
+- hiperglikemii, odpowiada kluczowi **Alert.Hiper**
+
+Powyższe wartości służą do sterowania komunikatami wyświetlanymi w widoku **Monitor**.
+
+Opis wszystkich kluczy stosowanych do konfiguracji aplikacji znajdziesz w dalszej części intrukcji w rodziale **_[Konfiguracja Usługi Azure]_**.
+
+>**Bezpieczeństwo**
+>
+>Dostęp do odczytu pomiarów glikemii zabezpieczony jest za pomocą hasła dostępu tzw. **_Secret Key_**. Bez znajomości tego hasła nie moża odczytać danych z api aplikacji. Pozwala to zabezpieczyć pomiary gilkemii przed nieuprawnionym dostępem ze strony innych użytkowników Internetu, pod warunkiem używania w adresie url prefixu **HTTPS** zamiast **HTTP**, czyli inaczej mówiąc tzw. protokołu **SSL**. Taki bezpieczny tryb pracy jest automatycznie ustawiony tyllko dla aplikacji uruchamianej w usłudze [Azure]. Jeżeli uruchamiasz aplikację na innym serwerze, musi samemu zatroszczyć się o ten rodzaj zabezpieczenia. Pamiętaj, aby regularnie zmieniać twój **_Secret Key_** oraz chronić go przed osobami postronnymi.
+>
+>Pierwszy raz ustawiasz  *Secret Key* w konfiguracji usługi [Azure] w wartości klucza **Secret.Key**, natomiast drugi raz wpisujesz to samo hasło w aplikacji na Twoim urządzeniu. Hasło zapisuje się w aplikacji po naciśnięciu przycisku **_Zapisz_**.
+
+```
+Przycisk 'Reset' służy do przywrócenia ustawień domyślnych aplikacji.
+Po użyciu przycisku 'Reset' należ jeszcze raz wpisać 'Secret Key'.
+```
 # Instalacja - Wstęp
 
-Poniżej znajdziesz informacje jak skonfigurować i uruchomić **Simple CGM 2009** oraz wszystkie potrzebne dodatkowe usługi. Informacje te są natury technicznej i w związku z tym, mogą być trudne do zrozumienia dla osób bez doświadczenia informatycznego. Jeżeli masz problem z ich interpretacją i wdrożeniem, najlepiej zwrócić się o pomoc do zaprzyjaźnionego i zaufanego informatyka, zwłaszcza, że podczas konfiguracji usługi **_Azure_** zostaniesz poproszony o podanie i zapisanie danych z Twojej karty kredytowej.
+Poniżej znajdziesz informacje jak zainstalować, skonfigurować i uruchomić **_Simple CGM 2009_** oraz wszystkie potrzebne usługi dodatkowe. Informacje te są natury technicznej i w związku z tym, mogą być trudne do zrozumienia dla osób bez doświadczenia informatycznego. Jeżeli masz problem z ich interpretacją lub wdrożeniem, najlepiej zwrócić się o pomoc do zaprzyjaźnionego i zaufanego informatyka, zwłaszcza, że podczas konfiguracji usługi **_[Azure]_** zostaniesz poproszony o podanie i zapisanie danych z Twojej karty kredytowej.
 
-1. Instalacja aplikacji **_Glimp_** (do skanowania sensora smartfonem) - [Instrukcja](http://nightscout.pl/freestyle-libre/glimp/)
-2. Instalacja elementów **_Nightscout_** (do odczytywania pomiaru glikemii przez Internet):
- 1. Instalacja konta **_GitHub_** (do udostępniania kopii *Nightscout* oraz *Simple CGM 2009* dla usługi *Azure*) - [Instrukcja](http://nightscout.pl/instalacja/github-konfiguracja/)<br/>
- 2. Instalacja konta **_mLab_** (do przechowywania i udostępniania pomiaru glikemii) - [Instrukcja](http://nightscout.pl/instalacja/mlab-konfiguracja/)<br/>
- 3. Instalacja usługi **_Azure_** (do instalacji i uruchamiania *Nightscout* oraz *Simple CGM 2009*) - [Instrukcja](http://nightscout.pl/instalacja/azure-konfiguracja/)
-3. Tworzenie konta **_Dropbox_** (do równoległego przechowania pomiaru glikemii) - [Logowanie](https://www.dropbox.com/login)
+1. [Instrukcja](http://nightscout.pl/freestyle-libre/glimp/) instalacji aplikacji **_[Glimp]_**, służącej do skanowania sensora *[FreeStyle Libre]* za pomocą smartfonu lub smartwatcha w trybie ręcznym bez ciągłego monitoringu tzn. smartwatch jest noszony normalnie na nadgarstku. 
+2. Instalacja aplikacji **_[Libre Alarm]_** służącej do skanowania sensora [FreeStyle Libre] za pomocą smartwatcha w trybie automatycznym CGM tzn. smartwatch jest przymocowany do sensora na ramieniu.
+3. Instalacja aplikacji **_[xDrip+]_**, służącej do zapisywania wyniku pomiaru glikemii do ekosystemu [Azure] / [mLab], po wcześniejszym jego odczytaniu z sensora *[FreeStyle Libre]* przez **_[Libre Alarm]_** lub pośredniczący transmiter z innego rodzaju sensora.
+4. Instalacja ekosystemu **_[Nightscout]_**, służącego do przechowywania i udostępniania pomiaru glikemii przez Internet:
+ 1. [Instrukcja](http://nightscout.pl/instalacja/github-konfiguracja/) instalacja konta **_[GitHub]_**, służącego do udostępniania kopii kodu źródłowego *[Nightscout]* oraz kopii kodu źrółowego **_Simple CGM 2009_** dla usługi *[Azure]*.
+ 2. [Instrukcja](http://nightscout.pl/instalacja/mlab-konfiguracja/) instalacja konta **_[mLab]_**, służącego do zapisywania, przechowywania i udostępniania pomiaru glikemii.
+ 3. [Instrukcja](http://nightscout.pl/instalacja/azure-konfiguracja/) instalacja usługi **_[Azure]_**, służącej do instalacji i uruchamiania ekosystemu *[Nightscout]* oraz **_Simple CGM 2009_**.
+3. [Zakładanie](https://www.dropbox.com/login) konta **_[Dropbox]_**, służącego do **równoległego** lub **szybkiego** zapisywania, przechowywania i udostępniani pomiary glikemii.
 
+>Zamiast konta w usłudze **_[GitHub]_** możesz użyć kont innych popularnych usług dostępnych w Internecie w celu przekopiowania kodu źródłowego **_Simple CGM 2009_** do serwisu **_[Azure]_**, takich jak:
+>- [OneDrive](https://onedrive.live.com/about/pl-pl/)
+>- [Dropbox]
+>- [Bitbucket](https://bitbucket.org/)
 
-**_Instalacja powyższych elementów może zabrać trochę czasu, ale są to elementy obowiązkowe i nie mogą być pominięte._**
+>W taki przypadku musisz najpierw przekopiować [kod źródłowy] **_Simple CGM 2009_** do wybranego serwisu za pomocą dostępnych funkcji.
 
-# Instalacja - Simple CGM 2009
+# Instalacja - Simple CGM 2009 #
 
 ### Konfiguracja konta *Dropbox* ###
 
@@ -140,7 +219,7 @@ lub
 ### Konfiguracja konta *[GitHub](https://github.com/)* ###
 
 1. Zaloguj się na swoje konto [GitHub](https://github.com/).
-2. Utwórz nowy **_Fork_** do repozytorium [https://github.com/woznica1970/simple-cgm](https://github.com/woznica1970/simple-cgm), postępując według [instrukcji](http://nightscout.pl/instalacja/github-konfiguracja/), punkt od 7 do 10, używając ***woznica1970/simple-cgm*** zamiast ***nightscout/cgm-remote-monitor***.
+2. Utwórz nowy **_Fork_** do repozytorium [https://github.com/woznica1970/simple-cgm-school](https://github.com/woznica1970/simple-cgm-school), postępując według [instrukcji](http://nightscout.pl/instalacja/github-konfiguracja/), punkt od 7 do 10, używając ***woznica1970/simple-cgm-school*** zamiast ***nightscout/cgm-remote-monitor***.
 
 ### Konfiguracja usługi *[Azure](https://portal.azure.com/)* ###
 
@@ -154,7 +233,7 @@ lub
 6. Możesz też przypiąć aplikację do pulpitu. 
 7. Osobiście ustawiam **_App Insights_** jako wyłączone. 
 
-Usługa *[Azure](https://portal.azure.com/)* na podstawie pola **_Nazwa aplikacji_** utworzy nowy adres **url** dla aplikacji **Simple CGM 2009**, który będziesz używał do uruchomiania aplikacji na smartfonie np. **_https://mojanazwaaplikacji.azurewebsites.net_**.
+Usługa *[Azure](https://portal.azure.com/)* na podstawie pola **_Nazwa aplikacji_** utworzy nowy adres **url** dla aplikacji **_Simple CGM 2009_**, który będziesz używał do uruchomiania aplikacji na smartfonie np. **_https://mojanazwaaplikacji.azurewebsites.net_**.
 
 #### 2. Tworzenie kluczy w sekcji *Ustawienia aplikacji* ####
 
@@ -165,14 +244,39 @@ Norm.Min
 Norm.Max
 Alert.Hipo
 Alert.Hiper
+Time.Zone
 Secret.Key
+Data.Source.Default
+Data.Source.Switchable
+Data.Model.Auto
 ```
 
 <span>![azureUstawienia](Images/Demo/azureUstawienia.jpg)</span>
 
-#### 3. Tworzenie kluczy w sekcji *Parametry połączeń* ####
+#### 3. Konfiguracja trybu pracy aplikacji####
 
-Utwórz poniższe klucze i ustaw odpowiednie wartości kluczy zgodnie z danymi z konta *[mLab](Https://mlab.com/welcome/)* oraz konta [DropBox](https://dropbox.github.io/dropbox-api-v2-explorer/#files_download).
+####_Data.Source.Default_####
+
+- ustawiasz opcje czytania źródeł danych
+- aby czytać dwa źródła danych, tzw. **opcja bezpieczna**, ustawiasz wartość klucza *Data.Source.Default* na **0**
+- aby czytać tylko źródło **_[Dropbox]_**, tzw. **opcja szybka**, ustawiasz wartość klucza *Data.Source.Default* na **1**
+- aby czytać tylko źródło **_[Azure]_**, tzw. **opcja uniwersalna**, ustawiasz wartość klucza *Data.Source.Default* na **2**
+
+####_Data.Source.Switchable_####
+
+- ustawiasz czy można zmieniać dynamicznie źródła danych z poziomu aplikacji
+- aby **zablokować** dynamiczą zmianę źródeł danych ustawiasz wartość klucza *Data.Source.Default* na **0** 
+- aby **aktywować** dynamiczą zmianę źródeł dwnanych ustawiasz wartość klucza *Data.Source.Default* na **1** 
+
+####_Data.Model.Auto_####
+
+- ustawiasz czy aplikacja ma **automatycznie** rozpoznawać, z jakiej aplikacji pochodzą dane np. [Glimp], czy też [xDrip+]
+- aby **wyłączyć** rozpoznawanie, ustawiasz wartość klucza *Data.Model.Auto* na **false** 
+- aby **aktywować** rozpoznawanie, ustawiasz wartość klucza *Data.Model.Auto* na **true**
+
+#### 4. Tworzenie kluczy w sekcji *Parametry połączeń* ####
+
+Utwórz poniższe klucze i ustaw odpowiednie wartości kluczy zgodnie z danymi z konta *[mLab]* oraz konta [DropBox].
 
 ```
 Mongo.Connection.String
@@ -194,22 +298,22 @@ Dropbox.Access.Token : QY-8ABIbye4JKJADUAyziFqDMVBHpE2S2Jb793PoM0mz287sdaiuashd&
 Dropbox.File.Path : /aplikacje/Glimp/GlicemiaNightscout.csv
 ```
 
-#### 4. Konfiguracja *Opcji wdrożenia* ####
+#### 5. Konfiguracja *Opcji wdrożenia* ####
 
 1. Postępuj zgodnie z [instrukcją](http://nightscout.pl/instalacja/azure-konfiguracja/), punkt od 30 do 40.
-2. Pamiętaj, aby podać swoje dane logowania do konta **_GitHub_** oraz wybrać odpowiedni *Projekt*: **simple-cgm** oraz *Rozgałęzienie*: **Master**
+2. Pamiętaj, aby podać swoje dane logowania do konta **_GitHub_** oraz wybrać odpowiedni *Projekt*: **simple-cgm-school** oraz *Rozgałęzienie*: **Master**
 
 ### Uruchomienie *Simple CGM 2009* na smartfonie ###
 
 1. Wpisz **adres url** np. **_https://mojanazwaaplikacji.azurewebsites.net_**  w dowolnej przeglądarce internetowej zainstalowanej na Twoim urządzeniu.
 2. Adres url znajdziesz na swoim koncie w usłudze *[Azure](https://portal.azure.com/)*.
-3. Jeżeli aplikacja **Simple CGM 2009** została prawidłowo zainstalowana w usłudze *[Azure](https://portal.azure.com/)* to teraz powinna zostać wyświetlona strona startowa.
+3. Jeżeli aplikacja **_Simple CGM 2009_** została prawidłowo zainstalowana w usłudze *[Azure](https://portal.azure.com/)* to teraz powinna zostać wyświetlona strona startowa.
 4. Kliknij u dołu ekranu na menu **_Ustawienia_**.
-4. Wpisz w polu **_Secret Key_** to samo hasło, które ustawiłeś w wartości klucza *Secret.Key* w sekcji *Ustawienia aplikacji* podczas instalacji i konfiguracji **Simple CGM 2009** w usłudze *[Azure](https://portal.azure.com/)*  .
-5. Następnie kliknij kolejno przyciski **_Zapisz_**, **_24 H_**, **_Monitor_**.
+4. Wpisz w polu **_Secret Key_** to samo hasło, które ustawiłeś w wartości klucza *Secret.Key* w sekcji *Ustawienia aplikacji* podczas instalacji i konfiguracji **_Simple CGM 2009_** w usłudze *[Azure](https://portal.azure.com/)*  .
+5. Następnie kliknij kolejno przyciski **_Zapisz_**, **_Monitor_**.
 
 ![ustawienia1](Images/Demo/ustawienia1.jpg)
-![monitor.jpg](Images/Demo/monitor.jpg)
+![monitor](Images/Demo/monitor.jpg)
 
 Jeżeli proces instalacji przebiegł prawidłowo, to powinieneś teraz zobaczyć na ekranie wartość glikemii z ostatniego skanowania oraz wykres liniowy. Jeżeli coś poszło nie tak, aplikacja wyświetli odpowiedni komunikat błędu.
 
@@ -235,7 +339,7 @@ W ramce poniżej znajdują się możliwe komunikaty błędów. W przypadku ich w
 
 ####Jednoczesne używanie wersji [Simple CGM 2009](https://github.com/woznica1970/simple-cgm) oraz wersji [Simple CGM 2009 Edycja Szkolna](https://github.com/woznica1970/simple-cgm-school)####
 
-- wystarczy skonfigurować jedno wspólne konto dla obu aplikacji w usłudze *[Dropbox](https://www.dropbox.com/)*,
+- wystarczy skonfigurować jedno wspólne konto dla obu aplikacji w usłudze *[Dropbox]*,
 - należy skonfigurować dwie osobne aplikacje w usłudze *[Azure](https://azure.microsoft.com/pl-pl/free/)*,
 - obie aplikacje mogą za to używać tych samych wartości dla kluczy:
  - **_Mongo.Connection.String_**
@@ -249,3 +353,34 @@ Jeżeli znajdziesz w powyższym opisie jakieś błędy lub nieścisłości, dzi�
 
 Dziękuję i pozdrawiam,</br>
 <a href="mailto:simple.cgm.2009@gmail.com" title="Mariusz Woźnica">Mariusz Woźnica</a>
+
+>Dodatkowo zobacz aplikację mobilną **_[Simple CGM 2009 Edycja Szkolna]_** dla nauczycieli, w celu monitorowania glikemii u dziecka, z zachowaniem zasad ochrony prywatności tzn. aplikacja udostępnia tylko ostatni pomiar glikemii w określonych dniach i godzinach np. w czasie pobytu dziecka w szkole.
+
+
+[Simple CGM 2009 Edycja Szkolna]: <https://github.com/woznica1970/simple-cgm-school#simple-cgm-2009-edycja-szkolna>
+[Simple CGM 2009]: <https://github.com/woznica1970/simple-cgm#simple-cgm-2009>
+[kod źródłowy]: <https://github.com/woznica1970/simple-cgm-school>
+[Teresa Woźnica]: <http://www.facebook.com/teresa.woznica.58>
+[Teresie]: <http://www.facebook.com/teresa.woznica.58)>
+[Cukrzyca typ 1 - odzyskajmy kolory zycia :)]: <https://www.facebook.com/groups/140046209720733/>
+[Szymona Czapla]: <https://www.facebook.com/szymon.czapla.75>
+[Timi Koza]: <https://www.facebook.com/timi.koza>
+[FreeStyle Libre]: <http://www.freestylelibre.pl/>
+[Abbott]: <http://xidoneo.pl/> 
+[Sony SmartWatch 3 SWR50]: <http://www.sonymobile.com/pl/products/smart-products/smartwatch-3-swr50/#yellow>
+[Sony Xperia E5]: <http://www.sonymobile.com/pl/products/phones/xperia-e5/>
+[Glimp]: <http://nightscout.pl/freestyle-libre/glimp/>
+[Libre Alarm]: <https://play.google.com/store/apps/details?id=com.pimpimmobile.librealarm&hl=pl>
+[xDrip+]: <http://nightscout.pl/freestyle-libre/xdrip/>
+[Dropbox]: <https://www.dropbox.com/pl/>
+[GitHub]: <https://github.com/>
+[Nightscout]: <http://nightscout.pl/instalacja/>
+[Azure]: <https://portal.azure.com/>
+[mLab]: <Https://mlab.com/welcome/>
+[MongoDB]: <https://docs.mongodb.com/>
+[Google Play]: <https://play.google.com/store/apps?hl=pl>
+[iTunes Store]: <http://www.apple.com/pl/itunes/charts/free-apps/>
+[Instalacja]: <#instalacja---simple-cgm-2009>
+[Konfiguracja Usługi Azure]: <#konfiguracja-usługi-azure>
+[Aplikacja Sieci Web]: <https://azure.microsoft.com/pl-pl/services/app-service/web/>
+[IIS  Windows® Server]: <https://www.iis.net/>
