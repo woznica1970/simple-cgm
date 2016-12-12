@@ -5,13 +5,13 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <link rel="shortcut icon" type="image/x-icon" href="Images/favicon.ico" />
     <link href="styles/kendo.common.min.css" rel="stylesheet" type="text/css" />
-    <script src="js/open.cgm.min.js?ver=161205.2330"></script>
+    <script src="js/open.cgm.min.js?ver=161212.1100"></script>
 </head>
 <body>
 
     <div id="monitor-view" data-role="view" data-title="Monitor" data-layout="default-layout" data-init="monitor_init" data-show="monitor_show" data-before-hide="monitor_hide">
         <div data-role="content" style="font-weight: bold; text-align: center;">
-            <div id="monitor-portrait" style="margin-bottom:.5em;">
+            <div id="monitor-portrait" style="margin-bottom: .5em;">
                 <div style="padding: 1em 3em 0em 3em;">
                     <div style="float: left; width: 25%; padding-top: 0.1em;">
                         <div style="font-size: .75em;" class="km-state-disabled">z przed</div>
@@ -100,6 +100,7 @@
                     </ul>
                 </nav>
             </div>
+            <div id="nextUpdateTime" style="margin: 0.7rem; font-size: 0.75rem;"></div>
         </div>
     </div>
 
@@ -125,22 +126,6 @@
         <ul data-role="listview" data-style="inset" data-type="group">
             <li>
                 <ul>
-                    <li>Pierwsze źródło danych:
-                            <ul id="settings-datasource" class="km-navbar">
-                                <li>Tandem</li>
-                                <li>Dropbox</li>
-                                <li>&nbsp;&nbsp;Azure&nbsp;&nbsp;</li>
-                            </ul>
-                    </li>
-                    <li>
-                        <label>
-                            Odśwież na start:
-                                <input id="settings-fetchdata" />
-                        </label>
-                    </li>
-                    <li style="display: none;">
-                        <div class="app_message_wrapper">&nbsp;</div>
-                    </li>
                     <li>
                         <label>
                             Secret Key:
@@ -152,6 +137,23 @@
                             <a data-role="button" data-icon="toprated" data-click="settings_save">Zapisz</a>
                             <a data-role="button" data-icon="settings" data-click="settings_clear_storage">Reset&nbsp;</a>
                         </div>
+                    </li>
+                    <li>Źródło danych:&nbsp;<strong><span id="dataSourceName"></span></strong>
+                            <ul id="settings-datasource" class="km-navbar">
+                                <li>A</li>
+                                <li>B</li>
+                                <li>C</li>
+                                <li>D</li>
+                            </ul>
+                    </li>
+                    <li style="display: none;">
+                        <label>
+                            Odśwież na start:
+                                <input id="settings-dataloadonstart" />
+                        </label>
+                    </li>
+                    <li style="display: none;">
+                        <div class="app_message_wrapper">&nbsp;</div>
                     </li>
                     <li>Wygląd:
                         <ul id="settings-skin1" class="km-navbar">
@@ -175,6 +177,38 @@
                             </li>
                         </ul>
                     </li>
+                    <li>
+                        <label>
+                            <span>Aktualizacja automatyczna:</span>
+                            <input id="settings-fetchdata" />
+                        </label>
+                    </li>
+                    <li id="fetchdataInterval" class="toRight" style="display: none"><span>Co ile minut:</span>
+                        <input id="settings-fetchInterval" class="inputNumber" />
+                    </li>
+                    <li id="alarmEnabled" style="display: none">
+                        <label>
+                            <span id="alarmSwitch">Alarm:</span>
+                            <input id="settings-alarm" />
+                        </label>
+                    </li>
+                    <li id="alarmMode" style="display: none">
+                        <label>
+                            <span id="alarmModeSwitch">Tonacja klasyczna:</span>
+                            <input id="settings-alarmMode" />
+                        </label>
+                    </li>
+                    <li id="alarmTest" class="toRight" style="display: none">
+                        <span>Test dźwięku:
+                        </span>
+                        <span style="text-align: right;">
+                            <a id="runAlarmTest" data-role="button" data-icon="sounds" data-click="settings_run_alarm">Start</a>
+                            <a id="stopAlarmTest" data-role="button" data-icon="stop" data-click="settings_stop_alarm" style="display: none;">Stop</a>
+                        </span>
+                    </li>
+                    <li id="deviceInfoLabel" style="display: none;">
+                        <label id="deviceInfo"></label>
+                    </li>
                     <li class="thresholds">Norma min:
                                  <input id="norm_min" class="inputNumber" />
                     </li>
@@ -195,10 +229,13 @@
     <div id="default-layout" data-role="layout" data-id="default-layout">
         <header data-role="header">
             <nav data-role="navbar">
-                <a id="up-button" data-role="button" data-icon="up" data-align="left" style="margin-left: .5em;"
-                    data-click="app_goto_top_list" data-enable="false">Góra</a>
-                <a id="sort-button" data-role="button" data-icon="sort-desc" data-align="right" style="margin-left: .5em;"
-                    data-click="log_sort" data-enable="false">Sortuj</a>
+                <a id="reload-button" data-role="button" data-icon="refresh" data-align="left" data-click="app_reload" style="margin-right: 2px;"></a>
+                <a id="runMonitorAlarmTest" data-role="button" data-icon="sounds" data-click="monitor_run_alarm" data-align="left" style="display: none;"></a>
+                <a id="stopMonitorAlarmTest" data-role="button" data-icon="stop" data-click="monitor_stop_alarm" data-align="left" style="display: none;"></a>
+                <a id="up-button" data-role="button" data-icon="up" data-align="left" style="margin-left: .5em; display: none;"
+                    data-click="app_goto_top_list">Góra</a>
+                <a id="sort-button" data-role="button" data-icon="sort-desc" data-align="right" style="margin-left: .5em; display: none;"
+                    data-click="log_sort">Sortuj</a>
                 <span id="title" data-role="view-title"></span>
             </nav>
             <div class="km-header km-widget km-navbar km-view-title app_message_wrapper app_message_notification" style="display: none;">
@@ -242,6 +279,20 @@
             </div>
         </footer>
     </div>
+
+    <audio id="audioPlayerControl" style="display: none;">
+        <source src="sounds/alarm.mp3" />
+        Your browser does not support the audio element.
+    </audio>
+
+    <script>
+        function worker_background_function() {
+            if (fetch_auto()) {
+                app_next_update();
+                app_fetch_data();
+            }
+        }
+    </script>
 
 </body>
 </html>
