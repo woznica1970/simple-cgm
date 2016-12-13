@@ -5,7 +5,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <link rel="shortcut icon" type="image/x-icon" href="Images/favicon.ico" />
     <link href="styles/kendo.common.min.css" rel="stylesheet" type="text/css" />
-    <script src="js/open.cgm.min.js?ver=161212.1100"></script>
+    <script src="js/open.cgm.min.js?ver=161213.1145"></script>
 </head>
 <body>
 
@@ -27,7 +27,10 @@
                 </div>
                 <br />
                 <br />
-                <div style="margin: 0 auto; width: 75%; padding: 1em;" class="km-widget km-navbar monitor-block">
+                <div style="position: absolute; top: 3.5em; font-size: .75em; right: 2em">
+                    <span class="km-state-disabled">HbA1c</span><div class="monitor-hbAac" style="font-size: 1.75em;"></div>
+                </div>
+                <div style="margin: 0 auto; width: 75%; padding: 1em; clear: both; min-height: 4.75em;" class="km-widget km-navbar monitor-block">
                     <div style="float: left; width: 33.3%; font-size: .75em;">
                         <span class="km-state-disabled">min</span><div class="monitor-min" style="font-size: 1.75em;"></div>
                     </div>
@@ -37,9 +40,6 @@
                     <div style="float: left; width: 33.3%; font-size: .75em;">
                         <span class="km-state-disabled">max</span><div class="monitor-max" style="font-size: 1.75em;"></div>
                     </div>
-                </div>
-                <div style="position: absolute; top: 3.5em; font-size: .75em; right: 2em">
-                    <span class="km-state-disabled">HbA1c</span><div class="monitor-hbAac" style="font-size: 1.75em;"></div>
                 </div>
             </div>
             <div id="monitor-landscape" style="display: none; position: absolute; z-index: 1000; right: 0%; width: 40%; background-color: transparent;">
@@ -139,12 +139,12 @@
                         </div>
                     </li>
                     <li>Źródło danych:&nbsp;<strong><span id="dataSourceName"></span></strong>
-                            <ul id="settings-datasource" class="km-navbar">
-                                <li>A</li>
-                                <li>B</li>
-                                <li>C</li>
-                                <li>D</li>
-                            </ul>
+                        <ul id="settings-datasource" class="km-navbar">
+                            <li>A</li>
+                            <li>B</li>
+                            <li>C</li>
+                            <li>D</li>
+                        </ul>
                     </li>
                     <li style="display: none;">
                         <label>
@@ -209,17 +209,17 @@
                     <li id="deviceInfoLabel" style="display: none;">
                         <label id="deviceInfo"></label>
                     </li>
-                    <li class="thresholds">Norma min:
-                                 <input id="norm_min" class="inputNumber" />
+                    <li class="thresholds toRight"><span>Norma min:</span>
+                        <input id="norm_min" class="inputNumber" />
                     </li>
-                    <li class="thresholds">Norma max:
-                                 <input id="norm_max" class="inputNumber" />
+                    <li class="thresholds toRight"><span>Norma max:</span>
+                        <input id="norm_max" class="inputNumber" />
                     </li>
-                    <li class="thresholds">Hipoglikemia:
-                                <input id="alert_hipo" class="inputNumber" />
+                    <li class="thresholds toRight"><span>Hipoglikemia:</span>
+                        <input id="alert_hipo" class="inputNumber" />
                     </li>
-                    <li class="thresholds">Hiperglikemia:
-                                <input id="alert_hiper" class="inputNumber" />
+                    <li class="thresholds toRight"><span>Hiperglikemia:</span>
+                        <input id="alert_hiper" class="inputNumber" />
                     </li>
                 </ul>
             </li>
