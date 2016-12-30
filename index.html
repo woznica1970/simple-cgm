@@ -5,7 +5,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <link rel="shortcut icon" type="image/x-icon" href="Images/favicon.ico" />
     <link href="styles/kendo.common.min.css" rel="stylesheet" type="text/css" />
-    <script src="js/open.cgm.min.js?ver=161230.0015"></script>
+    <script src="js/open.cgm.min.js?ver=161230.1430"></script>
 </head>
 <body>
 
@@ -138,7 +138,7 @@
                             <a data-role="button" data-icon="settings" data-click="settings_clear_storage">Reset&nbsp;</a>
                         </div>
                     </li>
-                    <li>Źródło danych:&nbsp;<strong><span id="dataSourceName"></span></strong>
+                    <li>Źródło danych:&nbsp;<strong><span id="dataSourceName" style="color:red;"></span></strong>
                         <ul id="settings-datasource" class="km-navbar">
                             <li>A</li>
                             <li>B</li>
@@ -155,50 +155,34 @@
                     <li style="display: none;">
                         <div class="app_message_wrapper">&nbsp;</div>
                     </li>
-                    <li>Wygląd:
-                        <ul id="settings-skin1" class="km-navbar">
-                            <li>A
-                            </li>
-                            <li>B
-                            </li>
-                            <li>C
-                            </li>
-                            <li>D
-                            </li>
-                        </ul>
-                        <ul id="settings-skin2" class="km-navbar">
-                            <li>E
-                            </li>
-                            <li>F
-                            </li>
-                            <li>G
-                            </li>
-                            <li>H
-                            </li>
-                        </ul>
-                    </li>
                     <li>
                         <label>
                             <span>Aktualizacja automatyczna:</span>
                             <input id="settings-fetchdata" />
                         </label>
                     </li>
-                    <li id="fetchdataInterval" class="toRight" style="display: none"><span>Co ile minut:</span>
+                    <li id="fetchdataInterval" class="toRight" style="display: none;"><span>Co ile minut:</span>
                         <input id="settings-fetchInterval" class="inputNumber" />
                     </li>
-                    <li id="alarmEnabled" style="display: none">
+                    <li id="alarmEnabled" style="display: none;">
                         <label>
                             <span id="alarmSwitch">Alarm:</span>
                             <input id="settings-alarm" />
                         </label>
                     </li>
-                    <li id="alarmMode" style="display: none">
+                    <li id="alarmHipo" class="toRight" style="display: none;"><span>Alarm hipo:</span>
+                        <input id="alarm_hipo" class="inputNumber" />
+                    </li>
+                    <li id="alarmHiper" class="toRight" style="display: none;"><span>Alarm hiper:</span>
+                        <input id="alarm_hiper" class="inputNumber" />
+                    </li>
+                    <li id="alarmMode" style="display: none;">
                         <label>
                             <span id="alarmModeSwitch">Tonacja klasyczna:</span>
                             <input id="settings-alarmMode" />
                         </label>
                     </li>
-                    <li id="alarmTest" class="toRight" style="display: none">
+                    <li id="alarmTest" class="toRight" style="display: none;">
                         <span>Test dźwięku:
                         </span>
                         <span style="text-align: right;">
@@ -221,11 +205,27 @@
                     <li class="thresholds toRight"><span>Hiperglikemia:</span>
                         <input id="alert_hiper" class="inputNumber" />
                     </li>
-                    <li class="thresholds toRight"><span>Alarm hipo:</span>
-                        <input id="alarm_hipo" class="inputNumber" />
-                    </li>
-                    <li class="thresholds toRight"><span>Alarm hiper:</span>
-                        <input id="alarm_hiper" class="inputNumber" />
+                    <li>Wygląd:
+                        <ul id="settings-skin1" class="km-navbar">
+                            <li>A
+                            </li>
+                            <li>B
+                            </li>
+                            <li>C
+                            </li>
+                            <li>D
+                            </li>
+                        </ul>
+                        <ul id="settings-skin2" class="km-navbar">
+                            <li>E
+                            </li>
+                            <li>F
+                            </li>
+                            <li>G
+                            </li>
+                            <li>H
+                            </li>
+                        </ul>
                     </li>
                 </ul>
             </li>
